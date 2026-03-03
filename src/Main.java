@@ -1,43 +1,48 @@
 /**
+ * =============================================================
+ * MAIN CLASS – UseCase3PalindromeCheckerApp
+ * =============================================================
+ *
+ * Use Case 3: Reverse String Based Palindrome Check
+ *
  * Description:
- * This class represents Use Case 2 of the
- * Palindrome Checker Management System.
+ * This class checks whether a string is a palindrome
+ * by reversing the string and comparing it with
+ * the original value.
  *
  * At this stage, the application:
- * - Stores a predefined string
- * - Compares characters from both ends
- * - Determines whether the string is a palindrome
- * - Displays the result on the console
+ * - Iterates the string in reverse order
+ * - Builds a reversed version
+ * - Compares original and reversed strings
+ * - Displays the validation result
  *
- * This use case introduces fundamental comparison logic
- * before using advanced data structures.
+ * This introduces transformation-based validation.
  *
  * @author Developer
- * @version 2.0
+ * @version 3.0
  */
 
 public class Main {
 
     /**
-     * Application entry point for UC2.
+     * Application entry point for UC3.
      *
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
         String input = "madam";
-        boolean isPalindrome = true;
+        String reversed = "";
 
-        // Loop only till half of the string length
-        for (int i = 0; i < input.length() / 2; i++) {
-
-            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        // Iterate from the last character to the first
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i);
         }
 
+        boolean isPalindrome = input.equals(reversed);
+
         System.out.println("Input text: " + input);
+        System.out.println("Reversed text: " + reversed);
         System.out.println("Is it a Palindrome? : " + isPalindrome);
     }
 }
