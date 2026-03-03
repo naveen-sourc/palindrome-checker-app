@@ -1,36 +1,35 @@
-import java.util.*;
-public class PallindromeCheckerApp {
+/**
+ * Description:
+ * This class represents the entry point of the
+ * Palindrome Checker Management System.
+ *
+ * At this stage, the application:
+ * - Starts execution from the main() method
+ * - Displays a welcome message
+ * - Shows application version
+ *
+ * No palindrome logic is implemented yet.
+ *
+ * The goal is to establish a clear startup flow.
+ *
+ * @author Developer
+ * @version 1.0
+ */
+
+public class Main {
+
+    /**
+     * Application entry point.
+     *
+     * This is the first method executed by the JVM
+     * when the program starts.
+     *
+     * @param args Command-line arguments
+     */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a string: ");
-        String input = sc.nextLine();
 
-        Deque<Character> deque = new ArrayDeque<>();
-
-// Insert characters into deque
-        for (char ch : input.toCharArray()) {
-            deque.addLast(ch);
-        }
-
-        boolean isPalindrome = true;
-
-// Compare front and rear
-        while (deque.size() > 1) {
-            char front = deque.removeFirst();
-            char rear = deque.removeLast();
-
-            if (front != rear) {
-                isPalindrome = false;
-                break;
-            }
-        }
-
-        if (isPalindrome) {
-            System.out.println("Palindrome");
-        } else {
-            System.out.println("Not a Palindrome");
-        }
-
-        sc.close();
+        System.out.println("Welcome to the Palindrome Checker Management System");
+        System.out.println("Version : 1.0");
+        System.out.println("System initialized successfully.");
     }
 }
